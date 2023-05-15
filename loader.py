@@ -4,12 +4,13 @@
 For each numeric column of a CSV, prints:
 - (min, lower quantile, median, upper quantile, max)
 - (mean, sd, skewness, kurtosis)
-- Likely distribution from (geometric, Poisson, exponential, Gaussian)
+- Likely distribution from (binomial, geometric, Poisson, exponential, Gaussian)
 
 Accepts .csv files.
 """
 import sys
 import pandas as pd
+from StatsTools import distributions
 
 def summarize_csv(file_name : str) -> None:
     data = pd.read_csv(file_name)
