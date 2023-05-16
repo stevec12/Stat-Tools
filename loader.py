@@ -10,9 +10,14 @@ Accepts .csv files.
 """
 import sys
 import pandas as pd
-from StatsTools import distributions
+from StatsTools import distributions as dist
+
+import numpy as np
 
 def summarize_csv(file_name : str) -> None:
+    """
+    Summarizes numeric columns of a CSV.
+    """
     data = pd.read_csv(file_name)
     for i in range(0,len(data.columns.values)):
         print('---'+data.columns.values[i]+'---')
