@@ -24,6 +24,7 @@ def summarize_csv(file_name : str) -> None:
         col = data.iloc[:,i]
         if col.dtype == 'int64' or col.dtype == 'float64':
             print(data.iloc[:,i].describe().iloc[1:].to_string())
+            print(dist.distributionOptimizer(data.iloc[:,i]))
         else:
             print("Not Numeric")
 
